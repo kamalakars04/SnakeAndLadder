@@ -13,9 +13,12 @@ namespace SnakeAndLadder
             const int NO_PLAY = 0;
             const int LADDER = 1;
             const int SNAKE = 2;
+            int totalNumberOfChances = 0;
+            int presentChanceNumber = 0;
             Random random = new Random();
             while (presentPosition < 100)
             {
+                presentChanceNumber++;
                 int numberOnDie = random.Next(1, 7);
                 int optionNumber = random.Next(0, 3);
                 switch (optionNumber)
@@ -33,8 +36,10 @@ namespace SnakeAndLadder
                         break;
 
                 }
+                Console.WriteLine("The position after die roll number {0} is {1}", presentChanceNumber, presentPosition);
+                totalNumberOfChances += 1;
             }
-            Console.WriteLine(presentPosition);
+            Console.WriteLine("Total number of chances taken to reach 100 is {0}", totalNumberOfChances);
 
         }
     }
