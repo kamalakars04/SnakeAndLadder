@@ -23,6 +23,7 @@ namespace SnakeAndLadder
                     case NO_PLAY:
                         break;
                     case LADDER:
+                        if(presentPosition + numberOnDie <=100)
                         presentPosition += numberOnDie;
                         break;
                     case SNAKE:
